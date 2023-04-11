@@ -10,9 +10,10 @@ import {
 
 export default function App() {
   const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
-  const [password, setPassword] = useState('');
+
 
   const handleLogin = () => {
     //
@@ -96,7 +97,6 @@ const styles = StyleSheet.create({
     marginTop: 5,
     marginBottom: 5,
     justifyContent: 'center',
-    padding: 0,
   },
   inputPass: {
     width: '80%',
@@ -105,8 +105,6 @@ const styles = StyleSheet.create({
     height: 50,
     marginTop: 5,
     marginBottom: 5,
-
-    padding: 0,
   },
   icon: {
     width: 24,
