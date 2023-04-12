@@ -1,22 +1,29 @@
 import * as React from 'react';
-import { View, Text, TouchableOpacity } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
+import { View, Text, TouchableOpacity, ImageBackground } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { NavigationContainer } from '@react-navigation/native';
+import Icon from 'react-native-vector-icons/AntDesign';
 
 import SignIn from './Page/SignIn';
 import SignUp from './Page/SignUp';
 
 function MyTabBar({ state, descriptors, navigation }) {
   return (
-    <View style={{ flexDirection: 'row' }}>
+    <View style={{
+      justifyContent: 'center',
+      flexDirection: 'row',
+      alignItems: 'center',
+      backgroundColor: '#2E3283',
+      height: 60,
+    }}>
       {state.routes.map((route, index) => {
         const { options } = descriptors[route.key];
         const label =
           options.tabBarLabel !== undefined
             ? options.tabBarLabel
             : options.title !== undefined
-            ? options.title
-            : route.name;
+              ? options.title
+              : route.name;
 
         const isFocused = state.index === index;
 
@@ -46,9 +53,13 @@ function MyTabBar({ state, descriptors, navigation }) {
             testID={options.tabBarTestID}
             onPress={onPress}
             onLongPress={onLongPress}
-            style={{ flex: 1 }}
+            style={{ flex: 1, alignItems: 'center', }}
           >
-            <Text style={{ color: isFocused ? '#673ab7' : '#222' }}>
+            <Icon name="heart" size={24} color="red" />
+            <Text style={{
+              color: isFocused ? '#ffffff' : '#e5e5e5',
+              fontSize: 16, 
+            }}>
               {label}
             </Text>
           </TouchableOpacity>
@@ -66,12 +77,14 @@ export default function App() {
       <Tab.Navigator tabBar={(props) => <MyTabBar {...props} />}>
         <Tab.Screen name="SignIn" component={SignIn} options={{
           headerShown: false
-        }}/>
+        }} />
         <Tab.Screen name="SignUp" component={SignUp} options={{
           headerShown: false
-        }}/>
+        }} />
       </Tab.Navigator>
     </NavigationContainer>
   );
 }
+
+
 

@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import { useNavigation } from '@react-navigation/native';
 import {
   StyleSheet,
@@ -68,10 +68,10 @@ export default function SignIn() {
         <TextInput style={styles.appText}>2.8.3</TextInput>
       </View>
       <View style={styles.footer}>
-        <TextInput style={{fontSize: 15, color: '#5B5B5B'}}>
+        <TextInput style={{ fontSize: 15, color: '#5B5B5B' }}>
           Don't have account?
         </TextInput>
-        <TextInput style={{fontSize: 15, color: '#5B5B5B', fontWeight: 'bold'}}>
+        <TextInput style={{ fontSize: 15, color: '#5B5B5B', fontWeight: 'bold' }}>
           Sign up
         </TextInput>
       </View>
