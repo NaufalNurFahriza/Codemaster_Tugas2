@@ -1,11 +1,14 @@
 import * as React from 'react';
-import { View, Text, TouchableOpacity, ImageBackground } from 'react-native';
+import { View, Text, TouchableOpacity, Image, } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
-import Icon from 'react-native-vector-icons/AntDesign';
+// import Icon from 'react-native-vector-icons/AntDesign';
 
 import SignIn from './Page/SignIn';
 import SignUp from './Page/SignUp';
+import ForgotPass from './Page/ForgotPass';
+import Home from './Page/Home'
+// import {styles} from '../Component/Style'
 
 function MyTabBar({ state, descriptors, navigation }) {
   return (
@@ -13,7 +16,7 @@ function MyTabBar({ state, descriptors, navigation }) {
       justifyContent: 'center',
       flexDirection: 'row',
       alignItems: 'center',
-      backgroundColor: '#2E3283',
+      backgroundColor: '#FFFFFF',
       height: 60,
     }}>
       {state.routes.map((route, index) => {
@@ -45,6 +48,12 @@ function MyTabBar({ state, descriptors, navigation }) {
           });
         };
 
+        const imageIcon = label === 'Home' ? 
+        require('./assets/Button_home.png')
+          : label === 'SignIn' ? require('./assets/Button_myBooking.png')
+            : label === 'SignUp' ? require('./assets/Button_help.png')
+              : require('./assets/Button_profile.png');
+
         return (
           <TouchableOpacity
             accessibilityRole="button"
@@ -55,10 +64,11 @@ function MyTabBar({ state, descriptors, navigation }) {
             onLongPress={onLongPress}
             style={{ flex: 1, alignItems: 'center', }}
           >
-            <Icon name="heart" size={24} color="red" />
+            {/* <Image style={styles.smallImages} source={require('../assets/3_att.png')} /> */}
+            <Image source={imageIcon}  style={{height: 20, width: 20,}} />
             <Text style={{
-              color: isFocused ? '#ffffff' : '#e5e5e5',
-              fontSize: 16, 
+              color: isFocused ? '#2E3283' : '#5B5B5B',
+              fontSize: 16,
             }}>
               {label}
             </Text>
@@ -75,10 +85,16 @@ export default function App() {
   return (
     <NavigationContainer>
       <Tab.Navigator tabBar={(props) => <MyTabBar {...props} />}>
-        <Tab.Screen name="SignIn" component={SignIn} options={{
+        <Tab.Screen name="Home" component={Home} options={{
           headerShown: false
         }} />
-        <Tab.Screen name="SignUp" component={SignUp} options={{
+        <Tab.Screen name="My Booking" component={SignIn} options={{
+          headerShown: false
+        }} />
+        <Tab.Screen name="Help" component={SignUp} options={{
+          headerShown: false
+        }} />
+        <Tab.Screen name="Profile" component={ForgotPass} options={{
           headerShown: false
         }} />
       </Tab.Navigator>

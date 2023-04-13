@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import { useNavigation } from '@react-navigation/native';
 import {
   StyleSheet,
@@ -8,6 +8,7 @@ import {
   TextInput,
   TouchableOpacity,
 } from 'react-native';
+// import {styles} from '../Component/Style'
 
 export default function SignUp() {
   const navigation = useNavigation();
@@ -66,12 +67,15 @@ export default function SignUp() {
       </TouchableOpacity>
 
       <View style={styles.footer}>
-        <TextInput style={{fontSize: 15, color: '#5B5B5B'}}>
+        <TextInput style={{ fontSize: 15, color: '#5B5B5B' }}>
           Already have account?
         </TextInput>
-        <TextInput style={{fontSize: 15, color: '#5B5B5B', fontWeight: 'bold'}}>
-          Log in
-        </TextInput>
+        <TouchableOpacity onPress={() => navigation.navigate('SignIn')}>
+          <Text style={{ fontSize: 15, color: '#5B5B5B', fontWeight: 'bold' }}>
+            Log in
+          </Text>
+        </TouchableOpacity>
+
       </View>
     </View>
   );
@@ -150,7 +154,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: 'white',
   },
-  
+
   footer: {
     position: 'absolute',
     bottom: 0,

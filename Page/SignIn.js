@@ -8,6 +8,7 @@ import {
   TextInput,
   TouchableOpacity,
 } from 'react-native';
+// import {styles} from '../Component/Style'
 
 export default function SignIn() {
   const navigation = useNavigation();
@@ -46,11 +47,14 @@ export default function SignIn() {
       <TouchableOpacity style={styles.loginBtn} onPress={() => navigation.navigate('SignUp')}>
         <Text style={styles.loginText}>Sign in</Text>
       </TouchableOpacity>
+
+      <TouchableOpacity onPress={() => navigation.navigate('ForgotPass')} >
       <Text style={styles.forgotText}>Forgot password</Text>
+      </TouchableOpacity>
 
       <View style={styles.loginWith}>
         <View style={styles.lineView}></View>
-        <TextInput style={styles.loginWithText}>Login with</TextInput>
+        <Text style={styles.loginWithText}>Login with</Text>
         <View style={styles.lineView}></View>
       </View>
       <View style={styles.imageView}>
@@ -64,16 +68,19 @@ export default function SignIn() {
         />
       </View>
       <View style={styles.appVersion}>
-        <TextInput style={styles.appText}>App Version</TextInput>
-        <TextInput style={styles.appText}>2.8.3</TextInput>
+        <Text style={styles.appText}>App Version</Text>
+        <Text style={styles.appText}>2.8.3</Text>
       </View>
       <View style={styles.footer}>
-        <TextInput style={{ fontSize: 15, color: '#5B5B5B' }}>
+        <Text style={{ fontSize: 15, color: '#5B5B5B' }}>
           Don't have account?
-        </TextInput>
-        <TextInput style={{ fontSize: 15, color: '#5B5B5B', fontWeight: 'bold' }}>
+        </Text>
+        <TouchableOpacity onPress={() => navigation.navigate('SignUp')}>
+        <Text style={{ fontSize: 15, color: '#5B5B5B', fontWeight: 'bold' }}>
           Sign up
-        </TextInput>
+        </Text>
+        </TouchableOpacity>
+        
       </View>
     </View>
   );
