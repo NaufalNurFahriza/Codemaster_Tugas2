@@ -4,11 +4,11 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
 // import Icon from 'react-native-vector-icons/AntDesign';
 
+// import {styles} from '../Component/Style'
 import SignIn from './Page/SignIn';
 import SignUp from './Page/SignUp';
 import ForgotPass from './Page/ForgotPass';
 import Home from './Page/Home'
-// import {styles} from '../Component/Style'
 
 function MyTabBar({ state, descriptors, navigation }) {
   return (
@@ -64,7 +64,6 @@ function MyTabBar({ state, descriptors, navigation }) {
             onLongPress={onLongPress}
             style={{ flex: 1, alignItems: 'center', }}
           >
-            {/* <Image style={styles.smallImages} source={require('../assets/3_att.png')} /> */}
             <Image source={imageIcon}  style={{height: 20, width: 20,}} />
             <Text style={{
               color: isFocused ? '#2E3283' : '#5B5B5B',
@@ -88,13 +87,13 @@ export default function App() {
         <Tab.Screen name="Home" component={Home} options={{
           headerShown: false
         }} />
-        <Tab.Screen name="My Booking" component={SignIn} options={{
+        <Tab.Screen name="SignIn" component={SignIn} options={{
           headerShown: false
         }} />
-        <Tab.Screen name="Help" component={SignUp} options={{
+        <Tab.Screen name="SignUp" component={SignUp} options={{
           headerShown: false
         }} />
-        <Tab.Screen name="Profile" component={ForgotPass} options={{
+        <Tab.Screen name="ForgotPass" component={ForgotPass} options={{
           headerShown: false
         }} />
       </Tab.Navigator>
