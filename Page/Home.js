@@ -9,7 +9,7 @@ import {
     TouchableOpacity,
 } from 'react-native';
 import Icon from 'react-native-vector-icons/AntDesign';
-// import {styles} from '../Component/Style'
+import {styles} from '../Component/Style'
 
 export default function Home() {
     const navigation = useNavigation();
@@ -47,59 +47,59 @@ export default function Home() {
     );
 }
 
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: '#E5E5E5',
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
+// const styles = StyleSheet.create({
+//     container: {
+//         flex: 1,
+//         backgroundColor: '#E5E5E5',
+//         alignItems: 'center',
+//         justifyContent: 'center',
+//     },
 
-    inputView: {
-        width: '80%',
-        backgroundColor: '#dedede',
-        borderRadius: 5,
-        height: 50,
-        marginTop: 5,
-        marginBottom: 5,
-        justifyContent: 'center',
-    },
+//     inputView: {
+//         width: '80%',
+//         backgroundColor: '#dedede',
+//         borderRadius: 5,
+//         height: 50,
+//         marginTop: 5,
+//         marginBottom: 5,
+//         justifyContent: 'center',
+//     },
 
-    inputText: {
-        marginLeft: 15,
-        height: 50,
-        color: '#000000',
-        fontSize: 16,
-    },
+//     inputText: {
+//         marginLeft: 15,
+//         height: 50,
+//         color: '#000000',
+//         fontSize: 16,
+//     },
 
-    pleaseText: {
-        height: 50,
-        color: '#5B5B5B',
-        fontSize: 22,
-    },
-    banner: {
-        top: -140,
-        width: "100%",
-        height: "27%",
-    },
-    moreBtn: {
-        bottom: -110,
-        width: '35%',
-        backgroundColor: '#2E3283',
-        borderRadius: 10,
-        height: 50,
-        alignItems: 'center',
-        justifyContent: 'center',
-        marginTop: 10,
-        marginBottom: 5,
-    },
-    moreText: {
-        fontSize: 21,
-        color: 'white',
-    },
-    smallImages:{
-        width: 80,
-        height: 80,
-    }
-});
+//     pleaseText: {
+//         height: 50,
+//         color: '#5B5B5B',
+//         fontSize: 22,
+//     },
+//     banner: {
+//         top: -140,
+//         width: "100%",
+//         height: "27%",
+//     },
+//     moreBtn: {
+//         bottom: -110,
+//         width: '35%',
+//         backgroundColor: '#2E3283',
+//         borderRadius: 10,
+//         height: 50,
+//         alignItems: 'center',
+//         justifyContent: 'center',
+//         marginTop: 10,
+//         marginBottom: 5,
+//     },
+//     moreText: {
+//         fontSize: 21,
+//         color: 'white',
+//     },
+//     smallImages:{
+//         width: 80,
+//         height: 80,
+//     }
+// });
 
